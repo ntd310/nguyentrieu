@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Thuê Truyện - TruyenDoc</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">🤯TruyenDoc</div>
+    <nav>
+      <a href="index.html">Trang Chủ</a>
+      <a href="gioithieu.html">Giới Thiệu</a>
+      <a href="danhsach.html">Danh Sách</a>
+      <a href="chothue.html">Đăng Tin Thuê</a>
+      <a href="lienhe.html">Liên Hệ</a>
+    </nav>
+  </header>
+
+  <div class="container-rent">
+    <h1>Thông Tin Đăng Ký Thuê Truyện</h1>
+
+    <form id="rentForm">
+      <div class="form-group">
+          <label>Họ và tên người thuê</label>
+          <input type="text" id="renterName" placeholder="Nhập đầy đủ họ và tên" required>
+      </div>
+
+      <div class="form-group">
+          <label>Số điện thoại liên hệ</label>
+          <input type="tel" id="renterPhone" placeholder="Nhập số điện thoại" required>
+      </div>
+
+      <div class="form-group">
+          <label>Địa chỉ Email</label>
+          <input type="email" id="renterEmail" placeholder="Nhập email để nhận thông báo" required>
+      </div>
+
+      <div class="form-group">
+          <label>Chọn truyện / sách muốn thuê</label>
+          <select id="bookSelect" required>
+              <option value="" disabled selected>-- Chọn tác phẩm bạn muốn thuê --</option>
+              <option value="shin">Shin cậu bé bút chì (1.000đ/ngày)</option>
+              <option value="harry">Trọn bộ Harry Potter (15.000đ/ngày)</option>
+              <option value="conan">Conan (1.500đ/ngày)</option>
+              <option value="doraemon">Doraemon (1.000đ/ngày)</option>
+              <option value="dragonball">Dragon Ball (1.500đ/ngày)</option>
+              <option value="demonslayer">Thanh Gươm Diệt Quỷ (2.500đ/ngày)</option>
+              <option value="haikyu">Haikyu (1.500đ/ngày)</option>
+              <option value="jujutsu">Chú Thuật Hồi Chiến (2.700đ/ngày)</option>
+              <option value="attackontitan">Attack On Titan (1.500đ/ngày)</option>
+              <option value="bleach">Bleach (2.000đ/ngày)</option>
+              <option value="naruto">Naruto (1.800đ/ngày)</option>
+          </select>
+      </div>
+
+      <button type="submit" class="btn">Xác Nhận Thuê Ngay</button>
+    </form>
+    
+    <div id="rentMessage"></div>
+  </div>
+
+  <footer>
+    <p>© 2026 🤯TruyenDoc - Hệ Thống Đặt Thuê Trực Tuyến</p>
+  </footer>
+
+  <script>
+    document.getElementById('rentForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Ngăn việc tải lại trang
+        
+        let selectElement = document.getElementById('bookSelect');
+        let selectedBookText = selectElement.options[selectElement.selectedIndex].text;
+        let messageDiv = document.getElementById('rentMessage');
+        messageDiv.innerHTML = `
+            <div class="alert-success">
+                🎉 Đăng ký thuê truyện thành công!<br>
+                <strong>Tác phẩm:</strong> ${selectedBookText}<br>
+                Ban quản trị sẽ liên hệ với bạn qua Số điện thoại/Email sớm nhất để bàn giao truyện.
+            </div>
+        `;
+        
+        this.reset(); 
+    });
+  </script>
+</body>
+</html>

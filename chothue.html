@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Tin Cho Thuê - TruyenDoc</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">🤯TruyenDoc</div>
+    <nav>
+        <a href="index.html">Trang Chủ</a>
+        <a href="gioithieu.html">Giới Thiệu</a>
+        <a href="danhsach.html">Danh Sách</a>
+        <a href="chothue.html">Đăng Tin Thuê</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </nav>
+  </header>
+
+  <div class="container-rent">
+    <h1>Đăng Tin Cho Thuê Truyện</h1>
+
+    <form id="sellForm">
+      <div class="form-group">
+          <label>Họ và tên người cho thuê</label>
+          <input type="text" required>
+      </div>
+      <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="tel" required>
+      </div>
+      <div class="form-group">
+          <label>Tên truyện / sách</label>
+          <input type="text" required>
+      </div>
+      <div class="form-group">
+          <label>Giá cho thuê (VNĐ / Ngày)</label>
+          <input type="number" required>
+      </div>
+      <div class="form-group">
+          <label>Hình ảnh truyện</label>
+          <input type="file">
+      </div>
+      <div class="form-group">
+          <label>Mô tả và quy định thuê</label>
+          <textarea rows="5" placeholder="Ví dụ: Thời gian thuê tối thiểu, tiền cọc truyện nếu có..."></textarea>
+      </div>
+      <button type="submit" class="btn">Đăng Tin Ngay</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <footer>
+    <p>© 2026 🤯TruyenDoc - Đăng Tin Cho Thuê Truyện</p>
+  </footer>
+
+  <script>
+  document.getElementById('sellForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      let messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = '<div class="alert-success">🎉 Đăng tin cho thuê truyện thành công! Ban quản trị sẽ kiểm duyệt tin của bạn sớm nhất.</div>';
+      this.reset();
+  });
+  </script>
+</body>
+</html>
