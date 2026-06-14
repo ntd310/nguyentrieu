@@ -14,7 +14,7 @@
       <a href="index.html">Trang Chủ</a>
       <a href="gioithieu.html">Giới Thiệu</a>
       <a href="danhsach.html">Danh Sách</a>
-      <a href="chothue.html">Đăng Thuê</a>
+      <a href="chothue.html">Đăng Tin Thuê</a>
       <a href="lienhe.html">Liên Hệ</a>
     </nav>
   </header>
@@ -68,7 +68,7 @@
 
   <script>
     document.getElementById('rentForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Ngăn việc tải lại trang
+        e.preventDefault();
         
         let selectElement = document.getElementById('bookSelect');
         let selectedBookText = selectElement.options[selectElement.selectedIndex].text;
